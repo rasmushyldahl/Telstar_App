@@ -50,7 +50,13 @@ export default createMuiTheme({
     MuiPaper: {
       square: true,
     },
-
+    MuiBotton: {
+      position: "fixed",
+      bottom: 0,
+      right: 30,
+      width: "300px",
+      border: "3px",
+      solid: "#73AD21",
+    },
   },
-
 } as ThemeOptions);
