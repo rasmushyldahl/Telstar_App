@@ -56,7 +56,6 @@ function App() {
         </AppBar>
         <Drawer variant="permanent" anchor="left">
           <div />
-
           <List>
             <Tooltip title="Booking">
               <ButtonBase onClick={handleLogoClick}>
@@ -64,7 +63,6 @@ function App() {
               </ButtonBase>
             </Tooltip>
           </List>
-
           <Button size="large" variant="contained" color="inherit">
             Logout
           </Button>
