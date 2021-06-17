@@ -1,81 +1,57 @@
-import { TextField, Card, CardHeader, Grid } from "@material-ui/core/";
-
-import Autocomplete from "@material-ui/lab/Autocomplete";
-
-import { cities, packageTypes } from "../src/MockData";
+import { Grid, Box } from "@material-ui/core/";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
 import DeliveryTextFields from "./DeliveryTextFields";
-
-import Checkbox from "@material-ui/core/Checkbox";
-
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
+import DeliveryDropdowns from "./DeliveryDropdowns";
+import Button from "@material-ui/core/Button";
 
 export default function BookingPage() {
+  const useStyles = makeStyles((theme) =>
+    createStyles({
+      box: {
+        position: "relative",
+        top: 150,
+        left: 130,
+        border: "1px",
+      },
+      button: {
+        position: "relative",
+        top: 50,
+        border: "1px",
+      },
+    })
+  );
+
+  function calculateRoutes() {
+    //insert logic for triggering calculations
+  }
+
+  const classes = useStyles();
   return (
-    <Grid
-      container
-      spacing={0}
-      alignItems="center"
-      justify="center"
-      style={{ minHeight: "75vh" }}
-      item
-      lg={12}
-    >
-      <Card>
-        <CardHeader title={"Delivery information"} />
-        <Grid container direction="row" spacing={10}>
+    <div className={classes.box}>
+      <Box>
+        <Grid container direction="row" spacing={2}>
           <Grid item lg={6}>
-            <Autocomplete
-              id="combo-box-demo"
-              options={cities}
-              getOptionLabel={(option) => option.name}
-              style={{ width: 250 }}
-              renderInput={(params) => (
-                <TextField {...params} label="Combo box" variant="outlined" />
-              )}
-            />
+            <DeliveryDropdowns />
           </Grid>
 
           <Grid item lg={6}>
-            <Autocomplete
-              id="combo-box-demo"
-              options={cities}
-              getOptionLabel={(option) => option.name}
-              style={{ width: 250 }}
-              renderInput={(params) => (
-                <TextField {...params} label="Combo box" variant="outlined" />
-              )}
-            />
+            <DeliveryTextFields />
           </Grid>
         </Grid>
-        <Grid container direction="row" spacing={10}>
-          <Grid item lg={6}>
-            <Autocomplete
-              id="combo-box-demo"
-              options={packageTypes}
-              getOptionLabel={(option) => option.type}
-              style={{ width: 250 }}
-              renderInput={(params) => (
-                <TextField {...params} label="Combo box" variant="outlined" />
-              )}
-            />
-          </Grid>
-
-          <Grid item lg={6}>
-            <FormControl component="fieldset">
-              <FormControlLabel
-                value="start"
-                control={<Checkbox color="primary" />}
-                label="Recommended"
-                labelPlacement="start"
-              />
-            </FormControl>
-          </Grid>
+        <div className={classes.button}>
+        <Grid item lg={6}>
+          <Button
+            size="large"
+            variant="contained"
+            color="inherit"
+            onClick={calculateRoutes}
+          >
+            Calulate routes
+          </Button>
         </Grid>
-
-        <DeliveryTextFields />
-      </Card>
-    </Grid>
+        </div>
+      </Box>
+    </div>
   );
 }
