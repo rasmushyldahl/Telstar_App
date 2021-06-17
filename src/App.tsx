@@ -38,7 +38,7 @@ function App() {
             <Grid container justify="flex-end" spacing={1}>
               <Grid item xs={1}>
                 <Button size="large" variant="contained" color="inherit">
-                  Booking
+                  Booking after push
                 </Button>
               </Grid>
               <Grid item xs={1}>
