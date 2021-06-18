@@ -16,7 +16,8 @@ export default function BookingPage() {
       },
       button: {
         position: "relative",
-        top: 50,
+        top: 150,
+        left: 130,
         border: "1px",
       },
     })
@@ -39,7 +40,7 @@ export default function BookingPage() {
             <DeliveryTextFields />
           </Grid>
         </Grid>
-        <div className={classes.button}>
+ <div className={classes.box}></div>
         <Grid item lg={6}>
           <Button
             size="large"
@@ -50,8 +51,9 @@ export default function BookingPage() {
             Calulate routes
           </Button>
         </Grid>
-        </div>
       </Box>
     </div>
   );
 }
+
+

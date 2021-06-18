@@ -4,15 +4,32 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Tooltip from "@material-ui/core/Tooltip";
+import React, { useState } from "react";
 
 export default function NavigationBar() {
+
+  const [currentSite, setCurrentSite] = useState(1);
+
   function handleLogoClick() {
-    //insert logic for redirect to booking page
+   setCurrentSite(1)
+  }
+  function reDirectToBooking() {
+    setCurrentSite(2)
+  }
+
+  function reDirectToAdmin() {
+    setCurrentSite(2)
+  }
+
+  function reDirectToStatistics() {
+    setCurrentSite(3)
   }
 
   function handleLogOut() {
     //insert logic for log out her
   }
+
+  
 
   return (
     <div>
@@ -26,17 +43,17 @@ export default function NavigationBar() {
 
           <Grid container justify="flex-end" item xs={12}>
             <Grid item xs={2}>
-              <Button size="large" variant="contained" color="inherit">
+              <Button size="large" variant="contained" color="inherit" onClick={reDirectToBooking}>
                 Booking
               </Button>
             </Grid>
             <Grid item xs={2}>
-              <Button size="large" variant="contained" color="inherit">
+              <Button size="large" variant="contained" color="inherit" onClick={reDirectToAdmin}>
                 Admin
               </Button>
             </Grid>
             <Grid item xs={2}>
-              <Button size="large" variant="contained" color="inherit">
+              <Button size="large" variant="contained" color="inherit" onClick={reDirectToStatistics}>
                 Statistics
               </Button>
             </Grid>
